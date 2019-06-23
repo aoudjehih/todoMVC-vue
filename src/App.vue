@@ -10,7 +10,7 @@
      <!-- Body -->
      <section class="main">
         <input id="toggle-all" type="checkbox" class="toggle-all"> <label for="toggle-all">Mark all as complete</label> 
-        <ul class="todo-list" v-for="(todoItem, index) in todoList">
+        <ul class="todo-list" v-for="(todoItem, index) in todoListShow">
            <Task 
            :isCompleted="todoItem.isCompleted" 
            :isEditing="todoItem.isEditing" 
@@ -24,18 +24,14 @@
      </section>
    
      <!-- Footer -->
-     <footer class="footer">
-        <span class="todo-count"><strong>1</strong> item left
-        </span> 
-        <ul class="filters">
-           <li><a href="#/all" class="selected">All</a></li>
-           <li><a href="#/active" class="">Active</a></li>
-           <li><a href="#/completed" class="">Completed</a></li>
-        </ul>
-        <button class="clear-completed">
-        Clear completed
-        </button>
-     </footer>
+     <Bas 
+     :completed="getCompleted"
+     :clearCompleted="showClearButton"
+     @allClicked="showAllItems()"
+     @activeClicked="showActiveItems()"
+     @completedClicked="showCompletedItems()"
+     @clearCompletedClicked="clearCompletedItems()"
+     ></Bas>
   </section>
 </template>
 
@@ -48,16 +44,19 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import Task from './components/task/index.vue'
+import Task from './components/Task/index.vue'
+import Bas from './components/Bas/index.vue'
 
 export default {
   name: 'app',
   components: {
-    Task
+    Task,
+    Bas
   },
   data () {
     return {
       label: '',
+      todoListShow: '',
       todoList: [
         {
           labelTask: 'label1',
@@ -74,9 +73,34 @@ export default {
           isCompleted: false,
           isEditing: false
         }
-      ]
+      ],
+      
       
     }
+  },
+  computed: {
+    getCompleted: function() {
+        var c = 0;
+        for (var i = 0; i<this.todoList.length; i++) {
+          if(!this.todoList[i].isCompleted) {
+            c++;
+          }
+        }
+
+        return c;
+    },
+    showClearButton: function() {
+      for (var i = 0; i<this.todoList.length; i++) {
+        if(this.todoList[i].isCompleted) {
+         return true;
+        }
+      }
+
+      return false;
+    }
+  },
+  mounted () {
+   this.todoListShow = this.todoList;
   },
   methods: {
     addNewTodo: function () {
@@ -85,20 +109,54 @@ export default {
         this.label = '';
       }
     },
-    toggle: function(index){
+    toggle: function(index) {
       this.todoList[index].isCompleted =! this.todoList[index].isCompleted;
     },
-    setEdition: function(index){
+    setEdition: function(index) {
       this.todoList[index].isEditing =! this.todoList[index].isEditing;
     },
-    focusout: function(index){
+    focusout: function(index) {
       if(this.todoList[index].isEditing) {
         this.todoList[index].isEditing = false;
       }
     },
-    destroy: function(index){
+    destroy: function(index) {
       this.todoList.splice(index, 1);
     },
+    showAllItems: function() {
+      this.todoListShow = this.todoList;
+    },
+    showActiveItems: function() {
+      var activeItemsList = [];
+      for (var i = 0; i<this.todoList.length; i++) {
+        if(!this.todoList[i].isCompleted) {
+          activeItemsList.push(this.todoList[i]);
+        }
+      }
+
+      this.todoListShow = activeItemsList; 
+    },
+    showCompletedItems: function() {
+      var completedList = [];
+      for (var i = 0; i<this.todoList.length; i++) {
+        if(this.todoList[i].isCompleted) {
+          completedList.push(this.todoList[i]);
+        }
+      }
+      this.todoListShow = completedList; 
+    },
+    clearCompletedItems: function() {
+     var uncompletedList = [];
+      
+      for (var i = 0; i<this.todoList.length; i++) {
+        if(!this.todoList[i].isCompleted) {
+          uncompletedList.push(this.todoList[i])
+        }
+      }
+
+      this.todoList = uncompletedList;
+      this.todoListShow = this.todoList;
+    }
   }
 }
 </script>
