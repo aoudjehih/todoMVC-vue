@@ -11,7 +11,7 @@
      <section class="main">
         <input id="toggle-all" type="checkbox" class="toggle-all"> <label for="toggle-all">Mark all as complete</label> 
         <ul class="todo-list" v-for="(todoItem, index) in todoListShow">
-           <Task 
+           <task 
            :isCompleted="todoItem.isCompleted" 
            :isEditing="todoItem.isEditing" 
            :label="todoItem.labelTask" 
@@ -19,39 +19,31 @@
            @toggle="toggle(index)"
            @onBlur="focusout(index)"
            @onDestroy="destroy(index)"
-           ></Task>
+           ></task>
         </ul>
      </section>
    
      <!-- Footer -->
-     <Bas 
+     <my-footer
      :completed="getCompleted"
      :clearCompleted="showClearButton"
      @allClicked="showAllItems()"
      @activeClicked="showActiveItems()"
      @completedClicked="showCompletedItems()"
      @clearCompletedClicked="clearCompletedItems()"
-     ></Bas>
+     ></my-footer>
   </section>
 </template>
 
-<!--<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>-->
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Task from './components/Task/index.vue'
-import Bas from './components/Bas/index.vue'
+import task from './components/Task/index.vue'
+import myFooter from './components/My-footer/index.vue'
 
 export default {
   name: 'app',
   components: {
-    Task,
-    Bas
+    task,
+    myFooter
   },
   data () {
     return {
@@ -74,8 +66,6 @@ export default {
           isEditing: false
         }
       ],
-      
-      
     }
   },
   computed: {

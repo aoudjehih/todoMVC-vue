@@ -1,5 +1,5 @@
 export default {
-  name: 'bas',
+  name: 'my-footer',
   components: {},
   props: {
     completed: Number,
