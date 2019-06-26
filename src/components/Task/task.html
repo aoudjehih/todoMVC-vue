@@ -2,9 +2,10 @@
 <li class="todo" :class="[{ editing: isEditing }, { completed: isCompleted}]">
 	<div class="view">
 		<input type="checkbox" class="toggle" @click="$emit('toggle')">
-		<label @dblclick="$emit('edition')">{{label}}</label>
+		<label @dblclick="[setFocus(), $emit('edition')]">{{label}}</label>
 		<button class="destroy" @click="$emit('onDestroy')"></button>
 	</div>
-	<input ref="label" type="text" class="edit" @blur="$emit('onBlur')" v-model="label">
+	<input ref="label" type="text" class="edit" @blur="$emit('onBlur')" :value="label" @keyup.enter="
+	onEnterButton">
 </li>
 

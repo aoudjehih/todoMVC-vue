@@ -14,9 +14,16 @@ export default {
   
   },
   mounted () {
-   
+  
   },
   methods: {
-     
+    setFocus: function(){
+      setTimeout(() => {
+        this.$refs.label.focus()
+      })
+    },
+    onEnterButton (e) {
+      this.$emit('onEnterButton', e.target.value)
+    }
   }
 }
