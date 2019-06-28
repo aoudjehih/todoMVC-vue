@@ -9,7 +9,7 @@
 
      <!-- Body -->
      <section class="main">
-        <input id="toggle-all" type="checkbox" class="toggle-all"> <label for="toggle-all">Mark all as complete</label> 
+        <input id="toggle-all" type="checkbox" class="toggle-all" @click="toggleAll()"> <label for="toggle-all">Mark all as complete</label> 
         <ul class="todo-list" v-for="(todoItem, index) in todoListShow" :key="index">
            <task 
            :isCompleted="todoItem.isCompleted" 
@@ -100,12 +100,14 @@ export default {
         this.todoList.push({labelTask: this.label, isCompleted: false});
         this.label = '';
         
-        this.save()        
+        this.save()    
+        this.todoListShow = this.todoList;
       }
     },
     toggle: function(index) {
       this.todoList[index].isCompleted =! this.todoList[index].isCompleted;
       this.save()
+      this.todoListShow = this.todoList;
     },
     setEdition: function(index) {
       var activeItemsList = [];
@@ -138,6 +140,7 @@ export default {
     destroy: function(index) {
       this.todoList.splice(index, 1);
       this.save()
+      this.todoListShow = this.todoList;
     },
     showAllItems: function() {
       this.todoListShow = this.todoList;
@@ -175,20 +178,32 @@ export default {
       this.todoListShow = this.todoList;
     },
     enterEditing: function(arg1, arg2){
-      var uncompletedList = [];
-      
-      for (var i = 0; i<this.todoList.length; i++) {
-        if(i == arg2) {
-          var obj = this.todoList[arg2]
-          obj.label = arg1
-          obj.isEditing = false;
-          uncompletedList.push(obj)
-        } else {
-          uncompletedList.push(this.todoList[i])
+      this.todoList[arg2].isEditing = false;
+      this.todoList[arg2].labelTask = arg1;
+      this.save()  
+    },
+    toggleAll: function() {
+      if (this.todoList.length > 0) {
+        var toggled = false
+        for (var i = 0; i<this.todoList.length; i++) {
+          if(!this.todoList[i].isCompleted) {
+            this.todoList[i].isCompleted = true
+            toggled = true
+          }
         }
-      }
 
-      this.todoList.push(uncompletedList);
+        if (!toggled) {
+          for (i = 0; i<this.todoList.length; i++) {
+            if(this.todoList[i].isCompleted) {
+              this.todoList[i].isCompleted = false
+            }
+          }
+        }
+
+        this.save()
+        this.todoListShow = this.todoList;
+      }
+      
     }
   }
 }
