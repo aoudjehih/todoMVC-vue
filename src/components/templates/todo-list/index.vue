@@ -2,7 +2,7 @@
   <section class="todoapp">
 
      <!-- Header -->
-     <header class="header">
+     <header class="header toto">
         <h1>todos</h1>
         <input @keyup.enter="addNewTodo" :autofocus="'autofocus'" v-model="label"  autocomplete="off" placeholder="What needs to be done?" class="new-todo">
      </header>
@@ -210,8 +210,20 @@ export default {
 }
 </script>
 
-
-
 <style>
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+label {
+    margin-bottom: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 2rem;
+}
+</style>
+
+<style scoped>
   @import 'http://todomvc.com/examples/vue/node_modules/todomvc-app-css/index.css';
 </style>
+
+
