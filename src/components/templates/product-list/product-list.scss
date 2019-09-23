@@ -3,7 +3,7 @@
     border: none;
     color: white;
     font-weight: bold;
-    padding: 12px 20px;
+    padding: 9px 22px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -14,4 +14,38 @@
 #label-filter {
     line-height: 37px;
     margin-right: 10px;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.btn-add-to-cart{
+    padding: 0 20px;
+}
+
+.input-price{
+    border-radius: 0;
+}
+
+.sidebar-filter{
+
+    border-bottom: 1px solid #c5c5c5;
+    padding-bottom: 15px;
+}
+
+.sidebar-filter span {
+    font-weight: bold;
+}
+
+.item-filter{
+    margin-bottom: 9px;
+}
+
+.items-filter-container {
+    padding-top: 20px;
+}
+
+.mt-65 {
+    margin-top: 65px
 }
