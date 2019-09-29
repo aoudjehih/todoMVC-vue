@@ -1,8 +1,8 @@
-import task from '../../organisms/task/index.vue'
-import myFooter from '../../organisms/my-footer/index.vue'
+import task from '../../molecules/task/index.vue'
+import myFooter from '../../molecules/my-footer/index.vue'
 
 export default {
-    name: 'app',
+    name: 'todo-list',
     components: {
         task,
         myFooter

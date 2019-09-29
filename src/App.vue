@@ -6,7 +6,8 @@
 </template>
 
 <script>
-  import navbar from './components/organisms/navbar/index.vue'
+  import navbar from './components/molecules/navbar/index.vue'
+
   export default {
     components: {
         navbar
