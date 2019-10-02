@@ -5,19 +5,11 @@ export default {
   components: {
     addToCartBtn
   },
-  props: [],
-  data () {
-    return {
-
-    }
-  },
-  computed: {
-
-  },
-  mounted () {
-
-  },
-  methods: {
-
+  props: {
+      img: String,
+      name: String,
+      price: String,
+      categories: Array,
+      quantity: Number
   }
 }

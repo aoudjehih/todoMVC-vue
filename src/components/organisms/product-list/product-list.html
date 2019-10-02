@@ -3,132 +3,32 @@
         <div class="row">
             <div class="col-sm-9">
                 <div class="row">
-                    <div class="col-md-4 offset-md-8 mb-2"><add-to-cart-btn label="Add selected to cart"></add-to-cart-btn></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-7">
-                        <div class="input-group">
-                            <span id="label-filter">Filter:</span>
-                            <select class="custom-select">
-                                <option selected>Category</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>&nbsp;
-                            <select class="custom-select">
-                                <option selected>Color</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>&nbsp;
-                            <select class="custom-select">
-                                <option selected>Size</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <button class="btn btn-default" type="reset"><i class="fa fa-refresh"></i> Reset</button>
-                        </div>
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-4">
-                        <form>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Search</span>
-                                </div>
-                                <input type="text" class="form-control">
-                            </div>
-                        </form>
+                    <div class="col-md-4 offset-md-8 mb-2">
+                        <add-to-cart-btn label="Add selected to cart"></add-to-cart-btn>
                     </div>
                 </div>
-
                 <div class="row">
-                    <div class="col">
-                        <!--Table-->
-                        <table class="table">
-
-                            <!--Table head-->
-                            <thead>
-                            <tr>
-                                <th>IMAGE</th>
-                                <th>NAME</th>
-                                <th>CATEGORIES</th>
-                                <th class="mr-55">PRICE</th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <!--Table head-->
-
-                            <!--Table body-->
-                            <tbody>
-                            <product></product>
-                            <product></product>
-                            <product></product>
-                            <product></product>
-                            <product></product>
-                            <product></product>
-                            </tbody>
-                            <!--Table body-->
-
-                        </table>
-                        <!--Table-->
-                    </div>
+                    <filter-top class="mb-3" label="Filter: "></filter-top>
+                </div>
+                <div class="row">
+                    <product-list-content :product-collection="productCollection"></product-list-content>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="row">
                     <div class="col-md-12">
-                        <div>
-                            <div class="sidebar-filter">
-                                <h5>
-                                    <span>Filter by color</span>
-                                </h5>
-                            </div>
-                            <div class="items-filter-container">
-                                <div class="form-check item-filter">
-                                    <input class="form-check-input" type="checkbox" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Black
-                                    </label>
-                                    <span class="pull-right">(8)</span>
-                                </div>
-                                <div class="form-check item-filter">
-                                    <input class="form-check-input" type="checkbox" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Blue
-                                    </label>
-                                    <span class="pull-right">(8)</span>
-                                </div>
-                                <div class="form-check item-filter">
-                                    <input class="form-check-input" type="checkbox" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Grey
-                                    </label>
-                                    <span class="pull-right">(6)</span>
-                                </div>
-                                <div class="form-check item-filter">
-                                    <input class="form-check-input" type="checkbox" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Pink
-                                    </label>
-                                    <span class="pull-right">(4)</span>
-                                </div>
-                                <div class="form-check item-filter">
-                                    <input class="form-check-input" type="checkbox" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        Red
-                                    </label>
-                                    <span class="pull-right">(2)</span>
-                                </div>
-                                <div class="form-check item-filter">
-                                    <input class="form-check-input" type="checkbox" id="defaultCheck1">
-                                    <label class="form-check-label" for="defaultCheck1">
-                                        White
-                                    </label>
-                                    <span class="pull-right">(5)</span>
-                                </div>
-                            </div>
+                        <div class="sidebar-filter">
+                            <h5>
+                                <span>Filter by color</span>
+                            </h5>
+                        </div>
+                        <div class="items-filter-container">
+                            <checkbox-filter itemId="defaultCheck1" label="Black" hitNumber="8"></checkbox-filter>
+                            <checkbox-filter itemId="defaultCheck2" label="Blue" hitNumber="8"></checkbox-filter>
+                            <checkbox-filter itemId="defaultCheck3" label="Grey" hitNumber="6"></checkbox-filter>
+                            <checkbox-filter itemId="defaultCheck4" label="Pink" hitNumber="4"></checkbox-filter>
+                            <checkbox-filter itemId="defaultCheck5" label="Red" hitNumber="2"></checkbox-filter>
+                            <checkbox-filter itemId="defaultCheck6" label="White" hitNumber="5"></checkbox-filter>
                         </div>
                     </div>
                     <div class="col-md-12" >
@@ -139,12 +39,7 @@
                                 </h5>
                             </div>
                             <div class="items-filter-container">
-                                <select class="custom-select col-md-5">
-                                    <option selected>Size</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
+                                <select-filter class="col-md-5" filterName="Size" :options="optionss"></select-filter>&nbsp;
                             </div>
                         </div>
                     </div>
@@ -156,8 +51,8 @@
                                 </h5>
                             </div>
                             <div class="items-filter-container">
-                                <vue-slider v-model="priceRange" :lazy="true"  :enable-cross="false"></vue-slider>
-                                <button type="button" class="button mr-4 btn-add-to-cart">Filter</button>
+                                <vue-slider v-model="priceRange" :lazy="true" :enable-cross="false"></vue-slider>
+                                <add-to-cart-btn label="Filter"></add-to-cart-btn>
                                 <div>Price: {{ getMinPrice() }}€ - {{ getMaxPrice() }}€</div>
                             </div>
                         </div>

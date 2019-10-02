@@ -12,7 +12,7 @@ const router = new Router({
 	mode: 'history',
 	routes: [
 		{name: "todo", path: "/", component: Todolist},
-		{name: "productList", path: "/product-list", component: ProductList},
+		{name: "productList", path: "/Product-list", component: ProductList},
 		{name: "tests", path: "/test", component: Test},
 	]
 })

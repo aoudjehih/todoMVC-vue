@@ -1,0 +1,25 @@
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>IMAGE</th>
+            <th>NAME</th>
+            <th>CATEGORIES</th>
+            <th class="mr-55">PRICE</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <template v-for="(product, key) in ProductCollection">
+            <product
+                :img="product.img"
+                :name="product.name"
+                :price="product.price"
+                :categories="product.categories"
+                :quantity="product.quantity"
+                :key="key"
+            ></product>
+        </template>
+        </tbody>
+    </table>
+</div>
