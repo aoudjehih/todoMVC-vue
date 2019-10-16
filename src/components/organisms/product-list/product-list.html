@@ -11,7 +11,13 @@
                     <filter-top class="mb-3" label="Filter: "></filter-top>
                 </div>
                 <div class="row">
-                    <product-list-content :product-collection="getFilteredProducts"></product-list-content>
+                    <product-list-content
+                            :product-collection="getFilteredProducts"
+                            :product-collection-pagination="getPaginatedProducts"
+                            :page-number="pageNumber"
+                            :page-size="pageSize"
+                            @clicked-pagination-btn="setPageNumber($event)"
+                    ></product-list-content>
                 </div>
             </div>
             <div class="col-md-3">
@@ -56,5 +62,6 @@
                 </div>
             </div>
         </div>
+
     </div>
 </section>

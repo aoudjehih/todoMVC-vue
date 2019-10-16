@@ -20,7 +20,9 @@ export default {
   props: [],
   data () {
     return {
-      priceRange: [0, 100],
+        priceRange: [0, 100],
+        pageSize: 5,
+        pageNumber: 1
     }
   },
   computed: {
@@ -31,13 +33,7 @@ export default {
           'getSearchFilter'
       ]),
       getPaginatedProducts() {
-          function paginate (array, page_size, page_number) {
-              --page_number; // because pages logically start with 1, but technically with 0
-              return array.slice(page_number * page_size, (page_number + 1) * page_size);
-          }
-
-          console.log(paginate([1, 2, 3, 4, 5, 6], 2, 2));
-          console.log(paginate([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 4, 2));
+        return this.paginate(this.getFilteredProducts)
       }
   },
   methods: {
@@ -46,6 +42,14 @@ export default {
     },
     getMaxPrice: function() {
         return this.priceRange[1]
+    },
+    paginate: function(array) {
+        let number = this.pageNumber;
+        number --
+        return array.slice(number * this.pageSize, (number + 1) * this.pageSize);
+    },
+    setPageNumber(val) {
+        this.pageNumber = val
     }
   }
 }
