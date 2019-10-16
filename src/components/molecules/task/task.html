@@ -1,4 +1,3 @@
-
 <li class="todo" :class="[{ editing: isEditing }, { completed: isCompleted}]">
 	<div class="view">
 		<input type="checkbox" class="toggle" @click="$emit('toggle')" :checked="isCompleted">

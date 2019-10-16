@@ -5,17 +5,6 @@ export default {
     isEditing: Boolean,
     label: String
   },
-  data () {
-    return {
-
-    }
-  },
-  computed: {
-  
-  },
-  mounted () {
-  
-  },
   methods: {
     setFocus: function(){
       setTimeout(() => {

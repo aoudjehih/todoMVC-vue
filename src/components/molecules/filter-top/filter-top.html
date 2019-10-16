@@ -1,13 +1,13 @@
 <div class="row">
     <div class="input-group col-md-7">
         <span id="label-filter">{{label}}</span>
-        <select-filter filterName="Categories" :options="optionss"></select-filter>&nbsp;
-        <select-filter filterName="Color" :options="optionss"></select-filter>&nbsp;
-        <select-filter filterName="Size" :options="optionss"></select-filter>
-        <icon-label-btn font-awesome-icon="fa fa-refresh"> Reset</icon-label-btn>
+        <select-filter filterName="Categories" :options="getCategories" @change="categorySelected"></select-filter>&nbsp;
+        <select-filter filterName="Color" :options="Object.keys(getColors)" @change="colorSelected"></select-filter>&nbsp;
+        <select-filter filterName="Size" :options="getSizes" @change="sizeSelected"></select-filter>
+        <icon-label-btn font-awesome-icon="fa fa-refresh" @change="categorySelected"> Reset</icon-label-btn>
     </div>
     <div class="col-md-1"></div>
     <div class="col-md-4">
-        <search-input>Search</search-input>
+        <search-input @onSearchInput="search($event)">Search</search-input>
     </div>
 </div>

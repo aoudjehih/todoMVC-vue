@@ -6,10 +6,27 @@ export default {
     addToCartBtn
   },
   props: {
-      img: String,
-      name: String,
-      price: String,
-      categories: Array,
-      quantity: Number
+      product: Object,
+      disabled: {
+          default: true
+      }
+    },
+    data (){
+      return {
+          selected: false
+      }
+    },
+  filters: {
+    toCurrency : (value) => {
+        if (typeof value !== "number") {
+            return value;
+        }
+
+        return new Intl.NumberFormat('fr-FR', {
+            style: 'currency',
+            currency: 'EUR',
+            minimumFractionDigits: 2
+        }).format(value);
+    }
   }
 }

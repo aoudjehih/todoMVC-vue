@@ -11,7 +11,7 @@
                     <filter-top class="mb-3" label="Filter: "></filter-top>
                 </div>
                 <div class="row">
-                    <product-list-content :product-collection="productCollection"></product-list-content>
+                    <product-list-content :product-collection="getFilteredProducts"></product-list-content>
                 </div>
             </div>
             <div class="col-md-3">
@@ -23,12 +23,8 @@
                             </h5>
                         </div>
                         <div class="items-filter-container">
-                            <checkbox-filter itemId="defaultCheck1" label="Black" hitNumber="8"></checkbox-filter>
-                            <checkbox-filter itemId="defaultCheck2" label="Blue" hitNumber="8"></checkbox-filter>
-                            <checkbox-filter itemId="defaultCheck3" label="Grey" hitNumber="6"></checkbox-filter>
-                            <checkbox-filter itemId="defaultCheck4" label="Pink" hitNumber="4"></checkbox-filter>
-                            <checkbox-filter itemId="defaultCheck5" label="Red" hitNumber="2"></checkbox-filter>
-                            <checkbox-filter itemId="defaultCheck6" label="White" hitNumber="5"></checkbox-filter>
+                            <checkbox-filter v-for="(hitNumber, color) in getColors" :hitNumber="hitNumber" :color="color"></checkbox-filter>
+
                         </div>
                     </div>
                     <div class="col-md-12" >
@@ -39,7 +35,7 @@
                                 </h5>
                             </div>
                             <div class="items-filter-container">
-                                <select-filter class="col-md-5" filterName="Size" :options="optionss"></select-filter>&nbsp;
+                                <select-filter class="col-md-5" filterName="Size" :options="getSizes"></select-filter>&nbsp;
                             </div>
                         </div>
                     </div>

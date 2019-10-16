@@ -8,4 +8,9 @@ export default {
     props: {
         ProductCollection: Array
     },
+    methods: {
+        addToCart : (value) => {
+            console.log(value)
+        }
+    }
 }

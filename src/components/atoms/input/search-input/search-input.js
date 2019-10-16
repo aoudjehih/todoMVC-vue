@@ -4,16 +4,17 @@ export default {
   props: [],
   data () {
     return {
-
+      searchText: null
     }
   },
-  computed: {
-
+  watch: {
+      searchText: function () {
+          if (this.searchText.trim().length > 2) {
+            this.$emit('onSearchInput', this.searchText)
+          }
+          if (this.searchText.trim().length <= 2) {
+              this.$emit('onSearchInput', null)
+          }
+      },
   },
-  mounted () {
-
-  },
-  methods: {
-
-  }
 }

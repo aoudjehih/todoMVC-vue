@@ -12,12 +12,9 @@
         <tbody>
         <template v-for="(product, key) in ProductCollection">
             <product
-                :img="product.img"
-                :name="product.name"
-                :price="product.price"
-                :categories="product.categories"
-                :quantity="product.quantity"
+                :product="product"
                 :key="key"
+                @addToCartClicked="addToCart(product)"
             ></product>
         </template>
         </tbody>
