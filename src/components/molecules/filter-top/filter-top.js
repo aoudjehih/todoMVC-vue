@@ -6,7 +6,8 @@ import {
     SET_FILTER_CATEGORY_USER,
     SET_FILTER_COLOR_USER,
     SET_FILTER_SIZE_USER,
-    SET_FILTER_SEARCH_USER
+    SET_FILTER_SEARCH_USER,
+    SET_FILTER_RESET_USER
 } from '../../../store/modules/ecommerce/mutation-types'
 
 export default {
@@ -31,7 +32,8 @@ export default {
             setCategory:    `ecommerce/${SET_FILTER_CATEGORY_USER}`,
             setColor:       `ecommerce/${SET_FILTER_COLOR_USER}`,
             setSize:        `ecommerce/${SET_FILTER_SIZE_USER}`,
-            setSearchText:  `ecommerce/${SET_FILTER_SEARCH_USER}`
+            setSearchText:  `ecommerce/${SET_FILTER_SEARCH_USER}`,
+            resets:         `ecommerce/${SET_FILTER_RESET_USER}`
         }),
         categorySelected(event) {
             var category = event.target.options[event.target.options.selectedIndex].value === 'Categories'
@@ -49,10 +51,15 @@ export default {
             var size = event.target.options[event.target.options.selectedIndex].value === 'Size'
                 ? null
                 : event.target.options[event.target.options.selectedIndex].value
+
             this.setSize(size)
         },
         search(val) {
             this.setSearchText(val)
+        },
+        reset()
+        {
+            this.resets()
         }
     }
 }

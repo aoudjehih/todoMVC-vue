@@ -10,11 +10,15 @@
         </tr>
         </thead>
         <tbody>
-            <product v-for="(product, key) in ProductCollectionPagination"
-                :product="product"
-                :key="key"
-                @addToCartClicked="addToCart(product)"
-            ></product>
+            <template v-for="product in ProductCollectionPagination">
+                <keep-alive>
+                    <product
+                        :product="product"
+                        :key="product.ean"
+                        @addToCartClicked="addToCart(product)"
+                    ></product>
+                </keep-alive>
+            </template>
         </tbody>
     </table>
     <div class="d-flex justify-content-center">

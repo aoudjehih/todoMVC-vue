@@ -1,5 +1,6 @@
 import Product from '../../molecules/product'
 import PaginationItem from '../../organisms/pagination-item'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'product-list-content',
@@ -13,12 +14,12 @@ export default {
         PageNumber: Number,
         PageSize: Number
     },
-    computed: {
-
-    },
     methods: {
-        addToCart : (value) => {
-            console.log(value)
+        ...mapActions({
+            addToBasket: `ecommerce/addToBasketAsync`,
+        }),
+        addToCart : function(value){
+            this.addToBasket(value)
         },
     }
 }

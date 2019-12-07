@@ -7,9 +7,6 @@ export default {
   },
   props: {
       product: Object,
-      disabled: {
-          default: true
-      }
     },
     data (){
       return {

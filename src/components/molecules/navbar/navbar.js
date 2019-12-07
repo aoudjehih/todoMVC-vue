@@ -1,6 +1,11 @@
+import { mapGetters } from 'vuex'
+import ShoppingCart from '../shopping-cart'
+
 export default {
   name: 'navbar',
-  components: {},
+  components: {
+      ShoppingCart
+  },
   props: [],
   data () {
     return {
@@ -8,12 +13,9 @@ export default {
     }
   },
   computed: {
-
-  },
-  mounted () {
-
-  },
-  methods: {
-
+      ...mapGetters('ecommerce', [
+          'getBasketItemsNumber',
+          'getBasket'
+      ]),
   }
 }

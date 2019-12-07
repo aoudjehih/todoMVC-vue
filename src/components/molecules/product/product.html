@@ -4,12 +4,12 @@
   </th>
   <td v-html="product.name"></td>
   <td>
-    <template v-for="(category, key) in product.categories"> {{category}}<span v-if="key+1 != product.categories.length">, </span>  </template>
+    <template v-for="(category, key) in product.categories"> {{category}} <span v-if="key+1 != product.categories.length">, </span>  </template>
   </td>
   <td>{{product.price | toCurrency}}</td>
   <td class="w-30">
     <div class="input-group">
-      <input class="col-md-3 mr-2 input-price" :value="product.quantity">
+      <input type="text" class="col-md-3 mr-2 input-price" v-model.number="product.quantity">
       <add-to-cart-btn
               label="Add to cart"
               :class="{disabled: !selected}"

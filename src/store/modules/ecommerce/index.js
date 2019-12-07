@@ -48,7 +48,273 @@ export default {
               color: "red"
           },
           {
-              ean: "123456",
+              ean: "423456",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "523456",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "623456",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "723456",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "823456",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "923456",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "103456",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "113456",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "13356",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "124456",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "123556",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "123656",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "123756",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "123856",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "123956",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "123406",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "123416",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "123426",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "123436",
+              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
+              name:"Black Skull T-shirt",
+              price: 135,
+              categories:[
+                  "Clothing",
+                  "Men",
+                  "T-shirts"
+              ],
+              quantity: 1,
+              sizes: ["S", "M", "L"],
+              color: "black"
+          },
+          {
+              ean: "123446",
               img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
               name:"Black Skull T-shirt",
               price: 135,
@@ -76,7 +342,7 @@ export default {
               color: "black"
           },
           {
-              ean: "123456",
+              ean: "123466",
               img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
               name:"Black Skull T-shirt",
               price: 135,
@@ -90,7 +356,7 @@ export default {
               color: "black"
           },
           {
-              ean: "123456",
+              ean: "123476",
               img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
               name:"Black Skull T-shirt",
               price: 135,
@@ -104,7 +370,7 @@ export default {
               color: "black"
           },
           {
-              ean: "123456",
+              ean: "123486",
               img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
               name:"Black Skull T-shirt",
               price: 135,
@@ -118,7 +384,7 @@ export default {
               color: "black"
           },
           {
-              ean: "123456",
+              ean: "123496",
               img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
               name:"Black Skull T-shirt",
               price: 135,
@@ -132,7 +398,7 @@ export default {
               color: "black"
           },
           {
-              ean: "123456",
+              ean: "123450",
               img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
               name:"Black Skull T-shirt",
               price: 135,
@@ -146,7 +412,7 @@ export default {
               color: "black"
           },
           {
-              ean: "123456",
+              ean: "123451",
               img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
               name:"Black Skull T-shirt",
               price: 135,
@@ -160,273 +426,7 @@ export default {
               color: "black"
           },
           {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
-              img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
-              name:"Black Skull T-shirt",
-              price: 135,
-              categories:[
-                  "Clothing",
-                  "Men",
-                  "T-shirts"
-              ],
-              quantity: 1,
-              sizes: ["S", "M", "L"],
-              color: "black"
-          },
-          {
-              ean: "123456",
+              ean: "123451",
               img: "https://www.mhsc-store.com/4268-large_default/t-shirt-mhsc-logo-junior.jpg",
               name:"Black Skull T-shirt",
               price: 135,
@@ -444,6 +444,7 @@ export default {
       colorFilter: null,
       sizeFilter: null,
       searchTextFilter: null,
+      basket: []
   },
   getters: {
       getFilteredProducts: state => {
@@ -503,6 +504,9 @@ export default {
 
           return [...new Set(sizes)]
       },
+      getBasketItemsNumber: state => state.basket.filter(x => x).length,
+      getBasket: state => state.basket
+
   },
   mutations: {
       [types.SET_FILTER_CATEGORY_USER](state, payload) {
@@ -517,6 +521,21 @@ export default {
       [types.SET_FILTER_SEARCH_USER](state, payload) {
           state.searchTextFilter = payload
       },
+      [types.SET_FILTER_RESET_USER](state) {
+          state.categoryFilter      = null;
+          state.colorFilter         = null;
+          state.sizeFilter          = null;
+          state.searchTextFilter    = null;
+      },
+      [types.ADD_TO_BASKET](state, payload) {
+          state.basket.push(Object.assign({}, payload))
+      },
   },
-  actions: {},
+  actions: {
+   async addToBasketAsync ({ commit }, payload) {
+          setTimeout(() => {
+              commit(types.ADD_TO_BASKET, payload)
+          }, 1000)
+      }
+  },
 }

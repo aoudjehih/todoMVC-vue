@@ -1,0 +1,28 @@
+<div role='navigation'>
+  <div id="menuToggle">
+
+    <input type="checkbox" />
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+    <ul id="menu">
+      <template v-for="item in basketItems">
+        <div class="media">
+          <div class="image"><img height="95" width="95" :src="item.img" ></div>
+          <div class="media__content">
+            <div class="media__title">{{item.name}}</div>
+            <div class="media__desc">
+              <template v-for="(category, key) in  item.categories">
+                {{category}}
+              </template>
+            </div>
+            <div>{{item.price | toCurrency}} Quantity: {{item.quantity}}</div>
+          </div>
+        </div>
+      </template>
+
+    </ul>
+  </div>
+</div>

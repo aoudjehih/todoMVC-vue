@@ -4,5 +4,5 @@ export default {
   props: {
     filterName: String,
     options: Array,
-  }
+  },
 }
