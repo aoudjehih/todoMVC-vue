@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Router from 'vue-router'
-import Todolist from './components/templates/todo-list-page/index.vue'
-import Test from './components/organisms/test/test.vue'
-import ProductList from './components/templates/product-list-page/index.vue'
+import Todolist from '@/components/templates/todo-list-page'
+import Subscription from '@/components/templates/subscription-page'
+import ProductList from '@/components/templates/product-list-page'
 import store from './store'
 
 Vue.config.productionTip = false
@@ -14,7 +14,7 @@ const router = new Router({
 	routes: [
 		{name: "todo", path: "/", component: Todolist},
 		{name: "productList", path: "/Product-list", component: ProductList},
-		{name: "tests", path: "/test", component: Test},
+		{name: "subscription", path: "/subscription", component: Subscription},
 	]
 })
 

@@ -1,0 +1,19 @@
+<div class="field">
+  <label>{{ label }}</label>
+  <input
+      id="id+name"
+      :type="type"
+      :name="name"
+      :validate="validate"
+      :required="required"
+      :placeholder="placeholder"
+      :maxlength="maxlength"
+      :autocomplete="autocomplete"
+      :label="label"
+      :readonly="readonly ? 'readonly' : false"
+      @input="updateValue()"
+  >
+  <span v-if="!validate" class="error1">
+    <i class="error-log fa fa-exclamation-triangle">{{ errorMessage }}</i>
+  </span>
+</div>
