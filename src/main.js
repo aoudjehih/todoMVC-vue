@@ -5,9 +5,11 @@ import Todolist from '@/components/templates/todo-list-page'
 import Subscription from '@/components/templates/subscription-page'
 import ProductList from '@/components/templates/product-list-page'
 import store from './store'
+import formValidator from './assets/scripts/form/plugin/validator'
 
 Vue.config.productionTip = false
 Vue.use(Router);
+Vue.use(formValidator);
 
 const router = new Router({
 	mode: 'history',

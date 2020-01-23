@@ -16,7 +16,8 @@
   float: left;
   position: relative;
 }
-#progressbar li:before {
+
+#progressbar li::before {
   content: counter(step);
   counter-increment: step;
   width: 20px;
@@ -24,16 +25,16 @@
   display: block;
   font-size: 10px;
   color: #333;
-  background: white;
+  background: #e9e9e9;
   border-radius: 3px;
   margin: 0 auto 5px auto;
 }
 /*progressbar connectors*/
-#progressbar li:after {
+#progressbar li::after {
   content: '';
   width: 100%;
   height: 2px;
-  background: white;
+  background: #e9e9e9;
   position: absolute;
   left: -50%;
   top: 9px;

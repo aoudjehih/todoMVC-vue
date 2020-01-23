@@ -4,4 +4,5 @@
   :name="name"
   :value="value"
   :class="isDisabled ? className + '--disabled' : className"
+  @click="$emit('click')"
 />

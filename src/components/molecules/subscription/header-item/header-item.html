@@ -1,7 +1,7 @@
 <ul id="progressbar">
-  <li class="active">User Information</li>
-  <li>Aquisition</li>
-  <li>Cultivation</li>
-  <li>Cultivation2</li>
-  <li>Retention</li>
+  <li :class="{ active: step > 0 }">User Information</li>
+  <li :class="{ active: step > 1 }">Aquisition</li>
+  <li :class="{ active: step > 2 }">Cultivation</li>
+  <li :class="{ active: step > 3 }">Cultivation2</li>
+  <li :class="{ active: step > 4 }">Retention</li>
 </ul>

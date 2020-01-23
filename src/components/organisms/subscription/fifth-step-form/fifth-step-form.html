@@ -1,56 +1,55 @@
 <fieldset>
   <h2 class="fs-title">Retention of your donors</h2>
   <h3 class="fs-subtitle">How long can you keep your donors and their donations?</h3>
-  <!-- Begin Total Number of Donors Who Gave in Year 1 Field -->
-  <div class="form-item webform-component webform-component-textfield hs_number_of_donors_in_year_1 field hs-form-field" id="webform-component-retention--amount-1">
 
-    <label for=" edit-submitted-retention-amount-1 number_of_donors_in_year_1-99a6d115-5e68-4355-a7d0-529207feb0b3_2983">What was your total number of donors who gave in year 1? *</label>
+  <form-field
+    name="retentionDonors1"
+    v-model.trim="fifthStep.retentionDonors1"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.fifthStep.retentionDonors1"
+    placeholder="total number of donors who gave in year 1"
+    label="What was your total number of donors who gave in year 1? *"
+    type="text"
+    :maxlength=200
+  />
+  <form-field
+    name="retentionDonors2"
+    v-model.trim="fifthStep.retentionDonors2"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.fifthStep.retentionDonors2"
+    placeholder="Total number of donors all years"
+    label="What was your total number of donors who gave in year 1 that also gave in year 2? *"
+    type="text"
+    :maxlength=200
+  />
+  <form-field
+    name="retentionRate"
+    v-model.trim="fifthStep.retentionRate"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.fifthStep.retentionRate"
+    placeholder="Retention Rate"
+    label="Retention Rate"
+    type="text"
+    :maxlength=200
+  />
 
-    <input id="edit-submitted-retention-amount-1" class="form-text hs-input" name="number_of_donors_in_year_1" required="required" size="60" maxlength="128" type="number" value="" placeholder="" data-rule-required="true" data-msg-required="Please enter a valid number">
-    <span class="error1" style="display: none;">
-              <i class="error-log fa fa-exclamation-triangle"></i>
-          </span>
-  </div>
-  <!-- End Total Number of Donors Who Gave in Year 1 Field-->
+  <form-field
+    name="fundraisingIndex"
+    v-model.trim="fifthStep.fundraisingIndex"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.fifthStep.fundraisingIndex"
+    placeholder="Index Score"
+    label="Fundraising 400 Index Score"
+    type="text"
+    :maxlength=200
+  />
 
-
-  <!-- Begin Total Number of Donors Who Gave in Year 1 and Year 2 Field -->
-  <div class="form-item webform-component webform-component-textfield" id="webform-component-retention--amount-2 hs_number_of_year_1_donors_who_also_gave_in_year_2 field hs-form-field">
-
-    <label for=" edit-submitted-retention-amount-2 number_of_year_1_donors_who_also_gave_in_year_2-99a6d115-5e68-4355-a7d0-529207feb0b3_2983">What was your total number of donors who gave in year 1 that also gave in year 2? *</label>
-
-    <input id="edit-submitted-retention-amount-2" class="form-text hs-input" name="number_of_year_1_donors_who_also_gave_in_year_2" required="required" size="60" maxlength="128" type="number" value="" placeholder="" data-rule-required="true" data-msg-required="Please enter a valid number">
-
-    <span class="error1" style="display: none;">
-              <i class="error-log fa fa-exclamation-triangle"></i>
-          </span>
-  </div>
-  <!-- End Total Number of Donors Who Gave in Year 1 and Year 2 Field -->
-
-  <!-- Begin Retention Rate Percent -->
-  <div class="form-item webform-component webform-component-textfield" id="webform-component-retention--percent-change field hs-form-field">
-
-    <label for="edit-submitted-retention-percent-change">Retention Rate</label>
-
-    <input id="edit-submitted-retention-percent-change" class="form-text hs-input" name="retention_rate_percent" readonly="readonly" size="60" maxlength="128" type="text" value="" placeholder="0">
-
-    <span class="error1" style="display: none;">
-              <i class="error-log fa fa-exclamation-triangle"></i>
-          </span>
-  </div>
-
-  <!-- End Retention Rate Percent -->
-
-
-  <!-- Begin Final Calc -->
-  <div class="form-item webform-component webform-component-textfield hs_fundraising_400_index field hs-form-field" id="webform-component-final-grade--grade">
-
-    <label for=" fundraising_400_index-99a6d115-5e68-4355-a7d0-529207feb0b3_2983">Fundraising 400 Index Score</label>
-
-    <input id="edit-submitted-final-grade-grade" class="form-text hs-input" name="fundraising_400_index" readonly="readonly" size="60" maxlength="128" type="text" value="" placeholder="0">
-  </div>
-  <!-- End Final Calc -->
-  <input type="button" data-page="5" name="previous" class="previous action-button" value="Previous" />
-  <input id="submit" class="hs-button primary large action-button next" type="submit" value="Submit">
-  <div class="explanation btn btn-small modal-trigger" data-modal-id="modal-3">What Is This?</div>
+  <form-button
+    :isDisabled="!validator.isValid('fifthStep')"
+    name="next"
+    value="next"
+    className="next action-button"
+    @click="submit"
+  />
+  <div class="explanation btn btn-small modal-trigger" data-modal-id="modal-3"><i class="question-log fa fa-question-circle"></i> What Is This?</div>
 </fieldset>

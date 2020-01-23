@@ -1,19 +1,14 @@
 export default {
   name: 'header-item',
   components: {},
-  props: [],
+  props: {
+    step: {
+			type: Number,
+    }
+  },
   data () {
     return {
 
     }
   },
-  computed: {
-
-  },
-  mounted () {
-
-  },
-  methods: {
-
-  }
 }

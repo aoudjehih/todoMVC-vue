@@ -1,9 +1,3 @@
-.question-log {
-  margin: 5px 1px 5px 0;
-  font-size: 15px;
-  position: relative;
-  bottom: -2px;
-}
 
 .next, .submit{
   float: right;
@@ -16,7 +10,6 @@
 .steps .action-button:hover, .steps .action-button:focus, .action-button:hover, .action-button:focus {
   background:#9F2AD0;;
 }
-
 .steps .explanation{
   display: block;
   clear: both;
@@ -34,6 +27,13 @@
   font-size: 12px;
   font-weight: 200;
   cursor:pointer;
+}
+
+.question-log {
+  margin: 5px 1px 5px 0;
+  font-size: 15px;
+  position: relative;
+  bottom: -2px;
 }
 
 /* Info */

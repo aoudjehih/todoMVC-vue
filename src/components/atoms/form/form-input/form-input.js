@@ -1,15 +1,9 @@
-import FormInput from '@/components/atoms/form/form-input'
+import _ from 'lodash'
 
 export default {
-  name: 'form-field',
-  components: {
-    FormInput
-  },
+  name: 'form-input',
+  components: {},
   props: {
-    type: {
-      type: String,
-      required: true
-    },
     name: {
       type: String,
       required: true
@@ -18,27 +12,33 @@ export default {
       type: String,
       required: true
     },
+    label: {
+      type: String,
+      required: true
+    },
+    type: {
+      type: String,
+      required: true
+    },
     maxlength: {
       type: Number,
     },
     autocomplete: {
       type: String,
-      default: "random-string"
-    },
-    label: {
-      type: String,
-      required: true
     },
     readonly: {
       type: Boolean,
       default: false
     },
-		fieldError: {
-      type: String,
-    },
     value: {
       type: String,
-      default: null,
     },
   },
+  computed: {
+    updateValue() {
+      return _.debounce(({ target: { value } }) => {
+        this.$emit('input', value)
+      }, 400)
+    },
+  }
 }

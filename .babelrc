@@ -1,4 +1,14 @@
 {
   "presets": ["@babel/preset-env"],
-  "plugins": ["syntax-dynamic-import"]
+  "plugins": [
+    [
+      "syntax-dynamic-import"
+    ],
+    [
+      "@babel/plugin-proposal-optional-chaining",
+      {
+        "loose": false
+      }
+    ],
+  ]
 }

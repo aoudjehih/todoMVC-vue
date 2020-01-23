@@ -13,20 +13,19 @@ export default {
     SecondStep,
     ThirdStep,
     FourthStep,
-    FifthStep
+    FifthStep,
   },
-  props: [],
   data () {
     return {
-
+      step: 1
     }
   },
-  computed: {
-
-  },
-  mounted () {
-  },
   methods: {
-
-  }
+		increment(){
+		  this.step ++
+    },
+    congradulation() {
+		  alert('Bravo '+this.$refs.firstStep.firstStep.email)
+    }
+  },
 }

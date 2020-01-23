@@ -2,53 +2,45 @@
   <h2 class="fs-title">Basic Information</h2>
   <h3 class="fs-subtitle">We just need some basic information to begin your scoring</h3>
 
-    <form-field
-      name="firstname"
-      :required=true
-      :validate=true
-      errorMessage="Please include your first name"
-      :isValid=true
-      placeholder="first name"
-      label="What's your First Name? *"
-      type="text"
-      :maxlength=200
-      :autocomplete=false
-      :readonly=false
-    />
+  <form-field
+    name="first"
+    v-model.trim="firstStep.firstname"
+    v-validate.immediate="`required|firstname`"
+    :field-error="validator.errors.firstStep.firstname"
+    placeholder="first name"
+    label="What's your First Name? *"
+    type="text"
+    :maxlength=200
+  />
 
   <form-field
-    name="email"
-    :required=true
-    :validate=true
-    errorMessage="Please enter a valid email address."
-    :isValid=true
+    name="em"
+    v-model.trim="firstStep.email"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.firstStep.email"
     placeholder="E-mail"
     label="What's your E-mail Address? *"
     type="text"
     :maxlength=200
-    :autocomplete=false
-    :readonly=false
   />
 
   <form-field
-    name="email"
-    :required=true
-    :validate=true
-    errorMessage="Please enter a valid number"
-    :isValid=true
+    name="totalNumberDataBase"
+    v-model.trim="firstStep.totalNumberDataBase"
+    v-validate.immediate="`totalNumberDataBase`"
+    :field-error="validator.errors.firstStep.totalNumberDataBase"
     placeholder="Total number"
     label="What's the Total Number of Constituents in your Database? *"
     type="text"
     :maxlength=200
-    :autocomplete=false
-    :readonly=false
   />
 
   <form-button
-    :isDisabled=true
+    :isDisabled="!validator.isValid('firstStep')"
     name="next"
     value="next"
     className="next action-button"
+    @click="submit"
   />
   <div class="explanation btn btn-small modal-trigger" data-modal-id="modal-3"><i class="question-log fa fa-question-circle"></i> What Is This?</div>
 </fieldset>
