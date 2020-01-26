@@ -47,10 +47,10 @@ export let defaultRules = {
 export let specificRules = {}
 export const extend = (form, schema, field = null) => {
 	//specific form rule
-	if (!field) {
-		specificRules = Object.assign({global: {[form]: schema}}, specificRules)
-		specificRules['global'][form] = schema
+	const scm = !field ? {form: schema} : (!specificRules[form]?.field ? {field: {[field]: schema}} : {[field]: schema})
+	if (!field || !specificRules[form]?.field) {
+		specificRules[form] = { ...specificRules[form], ...scm}
 	} else {
-		//specific form field rule
+		specificRules[form].field = { ...specificRules[form].field, ...scm}
 	}
 }
