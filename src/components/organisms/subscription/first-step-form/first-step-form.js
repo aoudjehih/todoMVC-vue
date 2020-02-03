@@ -2,7 +2,7 @@
 import css from '@/components/organisms/subscription/first-step-form/first-step-form.scss'
 import FormField from '@/components/molecules/form/form-field'
 import FormButton from '@/components/atoms/form/button-form'
-import { extend } from '@/assets/scripts/form/rules/rules'
+import { extend } from '@/assets/scripts/form/rules/extend'
 //todo add pending
 //todo replace object assign by spread operator
 //todo garder le mixin?
@@ -56,8 +56,8 @@ export default {
 		], "requiredbhs")
 	},
 	mounted() {
-		extend('firstStep', [{
-			execute: async () => {
+		extend('firstSteps', [{
+			validate: async () => {
 				console.log('first')
 				let resp = await new Promise(function(resolve) {
 					setTimeout(() => {
@@ -67,13 +67,13 @@ export default {
 				})
 
 				if(!resp) {
-					this.validator.errors.set('firstStep', [{firstname: "toto"}, {email: "totz"}])
+				//	this.validator.errors.set('firstStep', [{firstname: "toto"}, {email: "totz"}])
 				}
 
 				return Promise.resolve(false)
 			}
 		},{
-			execute: async () => {
+			validate: async () => {
 				console.log('Second')
 				return  new Promise(function(resolve) {
 					setTimeout(function() {
@@ -85,9 +85,11 @@ export default {
 		}])
 	},
   methods:{
-		async submit(){
-			await this.validator.validateAll('firstStep')
-			console.log('finish')
+		async submit() {
+		const isValid =	await this.validator.validateAll('firstStep')
+		if (isValid) {
+			this.$parent.next({firstStep: this.$data.firstStep})
+		}
 		},
   }
 }

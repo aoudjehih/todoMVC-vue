@@ -17,15 +17,18 @@ export default {
   },
   data () {
     return {
-      step: 1
+      step: 1,
+      formData : {}
     }
   },
   methods: {
-		increment(){
+		next(formData){
+			this.formData = {...this.formData, ...formData}
+			console.log(this.formData)
 		  this.step ++
     },
     congradulation() {
-		  alert('Bravo '+this.$refs.firstStep.firstStep.email)
+		  alert(this.formData.firstStep.email)
     }
   },
 }

@@ -1,66 +1,8 @@
-import {defaultRules, specificRules} from '../rules/rules'
-import { asyncForEach, getHandler } from "../utils/functions"
-
-class FormError {
-	constructor() {
-		this.errors 		= {}
-		Object.setPrototypeOf(this.errors, getHandler())
-	}
-
-	get() {
-		return this.errors
-	}
-
-	set(form, fieldErrors) {
-		fieldErrors.forEach(field => {
-			for (let [key, value] of Object.entries(field)) {
-				this.errors = Object.assign({[form]: {[key]: value}}, this.errors)
-				this.errors[form][key] = value
-				//  const errorObject = {[key]: value}
-				//  this.errors[form][key] = { ...this.errors[form][key], ...errorObject}
-			}
-		})
-	}
-
-	clear(form, field) {
-		if(this.errors[form]?.[field])	delete this.errors[form][field]
-		this.errors = Object.assign({}, this.errors)
-	}
-
-	merge(form, errorField) {
-		this.errors[form] = { ...this.errors[form], ...errorField}
-	}
-
-	any(form) {
-		return Object.keys(this.errors[form]).length !== 0
-	}
-}
-
-class FormField {
-
-	constructor() {
-		this.fields = {}
-	}
-
-	get(form, field) {
-		return !field ? this.fields?.[form] : this.fields?.[form]?.[field]
-	}
-
-	set(form, field, obj) {
-		this.fields[form][field] = obj
-	}
-
-	merge(form, field, fieldObject) {
-		if(!this.fields[form]) {
-			this.fields[form] = []
-		}
-		this.fields[form][field] = { ...this.fields[form][field], ...fieldObject}
-	}
-
-	all(form) {
-		return this.fields?.[form]
-	}
-}
+import {defaultRules} from '../rules/rules'
+import {specificRules} from "../rules/extend"
+import { asyncForEach } from "../utils/functions"
+import FormError from "./form-error"
+import FormField from './form-field'
 
 class FormValidator {
 
@@ -69,14 +11,26 @@ class FormValidator {
 		this.fields 		= new FormField()
 	}
 
+	/**
+	 * @param form
+	 *
+	 * @returns {Promise.<*>}
+	 */
 	async validateSpecificRules(form) {
-		if(specificRules[form].form) {
+		if(specificRules?.[form]?.form) {
 			return await asyncForEach(specificRules[form].form, async (rule) => {
-				return await rule.execute();
+				return await rule.validate()
 			})
 		}
 	}
 
+	/**
+	 * @param form
+	 * @param field
+	 * @param value
+	 * @param expression
+	 * @param immediate
+	 */
 	validateField(form, field, value, expression, immediate) {
 		//is immediate validation
 		if (!immediate) return
@@ -102,21 +56,22 @@ class FormValidator {
 			if (constraint) {
 				verifiedRule = true
 				const errorField = {[field]: constraint.message}
-			//	this.errors.errors[form] = { ...this.errors.errors[form], ...errorField}
 				this.errors.merge(form, errorField)
 			}
 		}
 
 		if(!verifiedRule) {
 			this.errors.clear(form, field)
-		// if(this.errors.errors[form]?.[field])	delete this.errors.errors[form][field]
-		// 	this.errors.errors = Object.assign({}, this.errors.errors)
 		}
 
-	//	this.fields[form][field] = {value: value, expression: expression, verified: true}
 		this.fields.set(form, field, {value: value, expression: expression, verified: true})
 	}
 
+	/**
+	 * @param form
+	 *
+	 * @returns {boolean}
+	 */
 	validate(form) {
 		if (this.errors.any(form)) {
 			return false
@@ -124,11 +79,16 @@ class FormValidator {
 
 		Object.keys(this.fields.all(form)).forEach(e => {
 			this.validateField(form, e, this.fields.get(form, e).value, this.fields.get(form, e).expression, true)
-		});
+		})
 
 		return !this.errors.any(form)
 	}
 
+	/**
+	 * @param form
+	 *
+	 * @returns {Promise.<boolean>}
+	 */
 	async validateAll(form) {
 		this.validate(form)
 		if (!this.errors.any(form)) {
@@ -138,35 +98,40 @@ class FormValidator {
 		return Promise.resolve(!this.errors.any(form))
 	}
 
+	/**
+	 * @param form
+	 * @param field
+	 * @param value
+	 * @param expression
+	 * @param immediate
+	 */
 	bindField(form, field, value, expression, immediate) {
-		// if(!this.fields[form]) {
-		// 	this.fields[form] = []
-		// }
-
-		//	this.fields[form][field] = { value: value, expression: expression, verified: false }
-		//	this.fields = Object.assign({ [form]: { value: value, expression: expression, verified: false } }, this.fields)
 		const fieldObject = { value: value, expression: expression, verified: false }
-	//	this.fields[form][field] = { ...this.fields[form][field], ...fieldObject}
 		this.fields.merge(form, field, fieldObject)
 		if (value && immediate) {
 			this.validateField(form, field, value, expression, immediate, true)
 		}
 	}
 
+	/**
+	 * @param form
+	 *
+	 * @returns {boolean}
+	 */
 	isValid(form) {
 		if (!this.fields.get(form)) {
 			return false
 		}
 
-		let isValid
-		for (let e of Object.keys(this.fields.fields[form])) {
+		let isValid = true
+		for (let e of Object.keys(this.fields.get(form))) {
 			if (!this.fields.get(form, e).verified) {
 				isValid = false
 				break
 			}
 		}
 
-		return isValid ? !this.errors.any(form) : false
+		return !isValid ? false : !this.errors.any(form)
 	}
 }
 

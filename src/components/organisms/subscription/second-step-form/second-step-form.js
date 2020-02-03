@@ -22,7 +22,7 @@ export default {
 		async submit(){
 			try {
 				if (await this.validator.validateAll('secondStep')) {
-					this.$parent.increment();
+					this.$parent.next({secondStep: this.$data.secondStep})
 				}
 			} catch (e) {
 				console.log(e); // 30
