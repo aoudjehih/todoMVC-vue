@@ -1,4 +1,4 @@
-# todo-mvc-vue
+# todo-mvc-vue:
 
 ## Project setup
 ```
