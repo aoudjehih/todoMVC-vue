@@ -1,0 +1,43 @@
+<fieldset>
+  <h2 class="fs-title">Total Cultivation in Donation</h2>
+  <h3 class="fs-subtitle">Let's talk about your donations as a whole</h3>
+
+  <form-field
+    name="totalGiving1"
+    v-model.trim="fourthStep.totalGiving1"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.get('fourthStep', 'totalGiving1')"
+    placeholder="first name"
+    label="total giving in Year 1"
+    type="text"
+    :maxlength=200
+  />
+  <form-field
+    name="totalGiving2"
+    v-model.trim="fourthStep.totalGiving2"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.get('fourthStep', 'totalGiving2')"
+    placeholder="Total giving in Year 2"
+    label="What was your total giving in Year 2? *"
+    type="text"
+    :maxlength=200
+  />
+  <form-field
+    name="totalGivingPercent"
+    v-model.trim="fourthStep.totalGivingPercent"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.get('fourthStep', 'totalGivingPercent')"
+    placeholder="Average Gift Size Percent Change"
+    label="Average Gift Size Percent Change"
+    type="text"
+    :maxlength=200
+  />
+  <form-button
+    :isDisabled="!validator.isValid('fourthStep')"
+    name="next"
+    value="next"
+    className="next action-button"
+    @click="submit"
+  />
+  <div class="explanation btn btn-small modal-trigger" data-modal-id="modal-3"><i class="question-log fa fa-question-circle"></i> What Is This?</div>
+</fieldset>

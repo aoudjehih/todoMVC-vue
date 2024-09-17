@@ -1,0 +1,4 @@
+<select class="custom-select" v-on="$listeners">
+  <option>{{filterName}}</option>
+  <option v-for="option in options" :value="option"> {{ option }} </option>
+</select>

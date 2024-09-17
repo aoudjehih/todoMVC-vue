@@ -1,0 +1,44 @@
+<fieldset>
+  <h2 class="fs-title">Acquisition of Donors</h2>
+  <h3 class="fs-subtitle">How have you been doing in acquiring donors?</h3>
+
+  <form-field
+      name="totalDonors1"
+      v-model.trim="secondStep.totalDonors1"
+      v-validate.immediate="`required`"
+      :field-error="validator.errors.get('secondStep', 'totalDonors1')"
+      placeholder="Number total donors first year"
+      label="What was your number of total donors in year 1? *"
+      type="text"
+      :maxlength=200
+  />
+  <form-field
+      name="totalDonors2"
+      v-model.trim="secondStep.totalDonors2"
+      v-validate.immediate="`required`"
+      :field-error="validator.errors.get('secondStep', 'totalDonors2')"
+      placeholder="Number total donors second year"
+      label="What was your number of total donors in year 2? *"
+      type="text"
+      :maxlength=200
+  />
+  <form-field
+      name="totalDonorsPercent"
+      v-model.trim="secondStep.totalDonorsPercent"
+      v-validate.immediate="`required`"
+      :field-error="validator.errors.get('secondStep', 'totalDonorsPercent')"
+      placeholder="Total donors percent"
+      label="Total Donors Percent Change"
+      type="text"
+      :maxlength=200
+  />
+
+  <form-button
+      :isDisabled="!validator.isValid('secondStep')"
+      name="next"
+      value="next"
+      className="next action-button"
+      @click="submit"
+  />
+  <div class="explanation btn btn-small modal-trigger" data-modal-id="modal-3"><i class="question-log fa fa-question-circle"></i> What Is This?</div>
+</fieldset>

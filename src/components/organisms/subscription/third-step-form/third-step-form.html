@@ -1,0 +1,44 @@
+<fieldset>
+  <h2 class="fs-title">Cultivation and Nurturing your Donors</h2>
+  <h3 class="fs-subtitle">How have you been nurturing donors to get better donations?</h3>
+  <!-- Begin Average Gift Size in Year 1 Field -->
+  <form-field
+    name="sizeYear1"
+    v-model.trim="thirdStep.sizeYear1"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.get('thirdStep', 'sizeYear1')"
+    placeholder="Average gift size in year 1"
+    label="What was your average gift size in year 1? *"
+    type="text"
+    :maxlength=200
+  />
+  <form-field
+    name="sizeYear2"
+    v-model.trim="thirdStep.sizeYear2"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.get('thirdStep', 'sizeYear2')"
+    placeholder="Average gift size in year 2"
+    label="What was your average gift size in year 2? *"
+    type="text"
+    :maxlength=200
+  />
+  <form-field
+    name="sizePercent"
+    v-model.trim="thirdStep.sizePercent"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.get('thirdStep', 'sizePercent')"
+    placeholder="Average gift size percent"
+    label="Average Gift Size Percent Change"
+    type="text"
+    :maxlength=200
+  />
+
+  <form-button
+    :isDisabled="!validator.isValid('thirdStep')"
+    name="next"
+    value="next"
+    className="next action-button"
+    @click="submit"
+  />
+  <div class="explanation btn btn-small modal-trigger" data-modal-id="modal-3"><i class="question-log fa fa-question-circle"></i> What Is This?</div>
+</fieldset>

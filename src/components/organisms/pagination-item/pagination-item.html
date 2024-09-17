@@ -1,0 +1,12 @@
+<div class="pagination" v-if="getPaginationPageNumbers() > 0">
+  <a href="#">&laquo;</a>
+  <a v-for="i in getPaginationPageNumbers()"
+     :key="i"
+     :class="{active: i == PageNumber}"
+     @click="$emit('clicked-pagination-btn', i)"
+  >
+    {{i}}
+  </a>
+  <a href="#">&raquo;</a>
+  <!-- onclick emit('paginationPageNumberClicked') active, paginationPreviousClicked paginationNextClicked-->
+</div>

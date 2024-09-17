@@ -1,0 +1,21 @@
+/*form styles*/
+.steps {
+  width: 675px;
+  margin: 50px auto;
+  position: relative;
+}
+
+.steps fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 17px 41px -21px rgb(0, 0, 0);
+  padding: 20px 30px;
+  border-top: 9px solid #7B1FA2;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 10%;
+
+  /*stacking fieldsets above each other*/
+  position: absolute;
+}

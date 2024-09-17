@@ -1,0 +1,55 @@
+<fieldset>
+  <h2 class="fs-title">Retention of your donors</h2>
+  <h3 class="fs-subtitle">How long can you keep your donors and their donations?</h3>
+
+  <form-field
+    name="retentionDonors1"
+    v-model.trim="fifthStep.retentionDonors1"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.get('fifthStep', 'retentionDonors1')"
+    placeholder="total number of donors who gave in year 1"
+    label="What was your total number of donors who gave in year 1? *"
+    type="text"
+    :maxlength=200
+  />
+  <form-field
+    name="retentionDonors2"
+    v-model.trim="fifthStep.retentionDonors2"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.get('fifthStep', 'retentionDonors2')"
+    placeholder="Total number of donors all years"
+    label="What was your total number of donors who gave in year 1 that also gave in year 2? *"
+    type="text"
+    :maxlength=200
+  />
+  <form-field
+    name="retentionRate"
+    v-model.trim="fifthStep.retentionRate"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.get('fifthStep', 'retentionRate')"
+    placeholder="Retention Rate"
+    label="Retention Rate"
+    type="text"
+    :maxlength=200
+  />
+
+  <form-field
+    name="fundraisingIndex"
+    v-model.trim="fifthStep.fundraisingIndex"
+    v-validate.immediate="`required`"
+    :field-error="validator.errors.get('fifthStep', 'fundraisingIndex')"
+    placeholder="Index Score"
+    label="Fundraising 400 Index Score"
+    type="text"
+    :maxlength=200
+  />
+
+  <form-button
+    :isDisabled="!validator.isValid('fifthStep')"
+    name="next"
+    value="next"
+    className="next action-button"
+    @click="submit"
+  />
+  <div class="explanation btn btn-small modal-trigger" data-modal-id="modal-3"><i class="question-log fa fa-question-circle"></i> What Is This?</div>
+</fieldset>

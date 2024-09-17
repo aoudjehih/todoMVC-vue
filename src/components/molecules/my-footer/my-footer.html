@@ -1,0 +1,11 @@
+<footer class="footer">
+	<span class="todo-count">
+		<strong>{{completed}}</strong> item<template v-if="completed != 1">s</template> left
+	</span>
+	<ul class="filters">
+		<li><a href="#/all" :class="{ selected: isAllSelected }" @click="[$emit('allClicked'), setSelection('isAllSelected')]">All</a></li>
+		<li><a href="#/active" :class="{ selected: isActiveSelected }" @click="[$emit('activeClicked'), setSelection('isActiveSelected')]">Active</a></li>
+		<li><a href="#/completed" :class="{ selected: isCompletedSelected }" @click="[$emit('completedClicked'), setSelection('isCompletedSelected')]">Completed</a></li>
+	</ul>
+	<button v-if="clearCompleted" class="clear-completed" :class="{ selected: isClearCompletedSelected }" @click="[$emit('clearCompletedClicked'), setSelection('isClearCompletedSelected')]">Clear completed</button>
+</footer>

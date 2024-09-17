@@ -1,0 +1,10 @@
+<!-- https://codepen.io/amrantex/pen/XyLyGz -->
+<section class="steps">
+  <header-item :step="step"/>
+  <first-step  v-if="step === 1"/>
+  <second-step v-if="step === 2"/>
+  <third-step  v-if="step === 3"/>
+  <fourth-step v-if="step === 4"/>
+  <fifth-step  v-if="step === 5"/>
+</section>
+

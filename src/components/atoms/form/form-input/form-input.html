@@ -1,0 +1,12 @@
+<input
+  id="`inb_${_uid}`"
+  :type="type"
+  :name="name"
+  :placeholder="placeholder"
+  :maxlength="maxlength"
+  :autocomplete="autocomplete"
+  :label="label"
+  :readonly="readonly ? 'readonly' : false"
+  :value="value"
+  @input="updateValue"
+/>

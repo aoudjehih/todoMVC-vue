@@ -1,0 +1,35 @@
+<section class="todoapp">
+
+    <!-- Header -->
+    <header class="header">
+        <h1>todos</h1>
+        <input @keyup.enter="addNewTodo" :autofocus="'autofocus'" v-model="label"  autocomplete="off" placeholder="What needs to be done?" class="new-todo">
+    </header>
+
+    <!-- Body -->
+    <section class="main">
+        <input id="toggle-all" type="checkbox" class="toggle-all" @click="toggleAll()"> <label for="toggle-all">Mark all as complete</label>
+        <ul class="todo-list" v-for="(todoItem, index) in todoListShow" :key="index">
+            <task
+                    :isCompleted="todoItem.isCompleted"
+                    :isEditing="todoItem.isEditing"
+                    :label="todoItem.labelTask"
+                    @edition="setEdition(index)"
+                    @toggle="toggle(index)"
+                    @onBlur="focusout(index)"
+                    @onDestroy="destroy(index)"
+                    @onEnterButton="enterEditing($event, index)"
+            ></task>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <my-footer
+            :completed="getCompleted"
+            :clearCompleted="showClearButton"
+            @allClicked="showAllItems()"
+            @activeClicked="showActiveItems()"
+            @completedClicked="showCompletedItems()"
+            @clearCompletedClicked="clearCompletedItems()"
+    ></my-footer>
+</section>

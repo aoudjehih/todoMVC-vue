@@ -1,0 +1,32 @@
+<div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>IMAGE</th>
+            <th>NAME</th>
+            <th>CATEGORIES</th>
+            <th class="mr-55">PRICE</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            <template v-for="product in ProductCollectionPagination">
+                <keep-alive>
+                    <product
+                        :product="product"
+                        :key="product.ean"
+                        @addToCartClicked="addToCart(product)"
+                    ></product>
+                </keep-alive>
+            </template>
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-center">
+    <pagination-item
+            :product-collection="ProductCollection"
+            :page-size="PageSize"
+            :page-number="PageNumber"
+            v-on="$listeners"
+    ></pagination-item>
+    </div>
+</div>

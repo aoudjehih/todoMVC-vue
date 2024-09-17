@@ -1,0 +1,27 @@
+.navbar {
+  margin-bottom: 100px;
+}
+
+$shopping-cart-red: #140a0c;
+
+.fa-stack[data-count]:after{
+  position:absolute;
+  right:-41%;
+  top:-35%;
+  content: attr(data-count);
+  font-size:64%;
+  padding:.6em;
+  border-radius:999px;
+  line-height:.75em;
+  color: white;
+  color:$shopping-cart-red;
+  text-align:center;
+  min-width:2em;
+  font-weight:bold;
+  background: #eaf1f3;
+  border-style:solid;
+}
+
+.white-cart {
+  color: #eaf1f3;
+}

@@ -1,0 +1,22 @@
+.action-button{
+  width: 100px !important;
+  background: #7B1FA2;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 1px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px auto;
+  -webkit-transition: all 0.3s linear 0s;
+  -moz-transition: all 0.3s linear 0s;
+  -ms-transition: all 0.3s linear 0s;
+  -o-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s;
+  display: block;
+
+  &--disabled {
+    @extend .action-button;
+    background: #c5c5c5;
+  }
+}

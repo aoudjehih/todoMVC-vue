@@ -1,0 +1,18 @@
+<div class="field">
+  <label>{{ label }}</label>
+  <form-input
+      id="inb_${_uid}"
+      :type="type"
+      :name="name"
+      :placeholder="placeholder"
+      :maxlength="maxlength"
+      :autocomplete="autocomplete"
+      :label="label"
+      :readonly="readonly ? 'readonly' : false"
+      :value="value"
+      @input="$emit('input', $event)"
+  />
+  <span v-if="fieldError" class="error1">
+    <i class="error-log fa fa-exclamation-triangle">{{ fieldError }}</i>
+  </span>
+</div>

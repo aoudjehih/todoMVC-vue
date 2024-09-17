@@ -1,0 +1,95 @@
+
+.next, .submit{
+  float: right;
+}
+
+.previous{
+  float:left;
+}
+
+.steps .action-button:hover, .steps .action-button:focus, .action-button:hover, .action-button:focus {
+  background:#9F2AD0;;
+}
+.steps .explanation{
+  display: block;
+  clear: both;
+  width: 540px;
+  background: #f2f2f2;
+  position: relative;
+  margin-left: -30px;
+  padding: 22px 0px;
+  margin-bottom: -10px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  top: 10px;
+  text-align: center;
+  color: #333333;
+  font-size: 12px;
+  font-weight: 200;
+  cursor:pointer;
+}
+
+.question-log {
+  margin: 5px 1px 5px 0;
+  font-size: 15px;
+  position: relative;
+  bottom: -2px;
+}
+
+/* Info */
+.info {
+  width: 300px;
+  margin: 35px auto;
+  text-align: center;
+  font-family: 'roboto', sans-serif;
+}
+
+.info h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
+  font-weight: 400;
+  color: #333333;
+  padding-bottom: 5px;
+
+}
+.info span {
+  color:#666666;
+  font-size: 13px;
+  margin-top:20px;
+}
+.info span a {
+  color: #666666;
+  text-decoration: none;
+}
+.info span .fa {
+  color: rgb(226, 168, 16);
+  font-size: 19px;
+  position: relative;
+  left: -2px;
+}
+
+.info span .spoilers {
+  color: #999999;
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+/*headings*/
+.fs-title {
+  text-transform: uppercase;
+  margin: 0 0 5px;
+  line-height: 1;
+  color: #7B1FA2;
+  font-size: 18px;
+  font-weight: 400;
+  text-align:center;
+}
+
+.fs-subtitle {
+  font-weight: normal;
+  font-size: 13px;
+  color: #837E7E;
+  margin-bottom: 20px;
+  text-align: center;
+}

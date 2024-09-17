@@ -1,0 +1,67 @@
+<section class="product-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-md-4 offset-md-8 mb-2">
+                        <add-to-cart-btn label="Add selected to cart"></add-to-cart-btn>
+                    </div>
+                </div>
+                <div class="row">
+                    <filter-top class="mb-3" label="Filter: "></filter-top>
+                </div>
+                <div class="row">
+                    <product-list-content
+                            :product-collection="getFilteredProducts"
+                            :product-collection-pagination="getPaginatedProducts"
+                            :page-number="pageNumber"
+                            :page-size="pageSize"
+                            @clicked-pagination-btn="setPageNumber($event)"
+                    ></product-list-content>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sidebar-filter">
+                            <h5>
+                                <span>Filter by color</span>
+                            </h5>
+                        </div>
+                        <div class="items-filter-container">
+                            <checkbox-filter v-for="(hitNumber, color) in getColors" :hitNumber="hitNumber" :color="color"></checkbox-filter>
+
+                        </div>
+                    </div>
+                    <div class="col-md-12" >
+                        <div class="mt-65">
+                            <div class="sidebar-filter">
+                                <h5>
+                                    <span>Filter by size</span>
+                                </h5>
+                            </div>
+                            <div class="items-filter-container">
+                                <select-filter class="col-md-5" filterName="Size" :options="getSizes"></select-filter>&nbsp;
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" >
+                        <div class="mt-65">
+                            <div class="sidebar-filter">
+                                <h5>
+                                    <span>Filter by price</span>
+                                </h5>
+                            </div>
+                            <div class="items-filter-container">
+                                <vue-slider v-model="priceRange" :lazy="true" :enable-cross="false"></vue-slider>
+                                <add-to-cart-btn label="Filter"></add-to-cart-btn>
+                                <div>Price: {{ getMinPrice() }}€ - {{ getMaxPrice() }}€</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
